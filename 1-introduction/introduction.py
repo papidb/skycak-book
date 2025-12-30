@@ -135,8 +135,8 @@ def count_characters(string: str) -> dict:
 
 
 def is_prime(N: int) -> bool:
-    if N == 1:
-        return True
+    if N <= 1:
+        return False
 
     for n in range(2, math.floor(N / 2) + 1):
         if N % n == 0:

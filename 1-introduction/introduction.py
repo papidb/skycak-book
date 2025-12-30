@@ -71,7 +71,6 @@ def check_if_symmetric(word):
         return False
 
     for i in range(math.floor(length / 2)):
-        print(word[i], i, length - 1)
         if word[i] != word[length - 1 - i]:
             return False
 
@@ -139,8 +138,7 @@ def is_prime(N: int) -> bool:
     if N == 1:
         return True
 
-    for n in range(1, math.floor(N / 2)):
-        # print(n)
+    for n in range(2, math.floor(N / 2) + 1):
         if N % n == 0:
             return False
     return True
@@ -154,5 +152,4 @@ if __name__ == "__main__":
     print(get_intersection([1, 2, 4], [3, 1, 9, 2]))
     print(get_union([1, 2, 4], [3, 1, 9, 2]))
     print(count_characters("A cat !!!"))
-    for n in range(20):
-        print(is_prime(n))
+    print(is_prime(4))

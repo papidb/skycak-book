@@ -175,7 +175,7 @@ tests = [
     {
         'function': is_prime,
         'input': 1,
-        'output': True
+        'output': False
     },
     {
         'function': is_prime,

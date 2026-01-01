@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from base import binary_to_decimal, hexadecimal_to_decimal
+from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary
 
 tests = [
     # binary_to_decimal tests
@@ -172,6 +172,78 @@ tests = [
         'function': hexadecimal_to_decimal,
         'input': 'BEEF',
         'output': 48879
+    },
+
+    # decimal_to_binary tests
+    {
+        'function': decimal_to_binary,
+        'input': 0,
+        'output': '0'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 1,
+        'output': '1'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 2,
+        'output': '10'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 3,
+        'output': '11'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 4,
+        'output': '100'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 5,
+        'output': '101'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 6,
+        'output': '110'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 7,
+        'output': '111'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 8,
+        'output': '1000'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 15,
+        'output': '1111'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 16,
+        'output': '10000'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 85,
+        'output': '1010101'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 255,
+        'output': '11111111'
+    },
+    {
+        'function': decimal_to_binary,
+        'input': 256,
+        'output': '100000000'
     },
 ]
 

@@ -33,23 +33,24 @@ def binary_to_decimal(string):
         amount = amount + ((2**i) * int(string[index]))
     return amount
 
+
 hex_to_decimal_map = {
-    '0': 0,
-    '1': 1,
-    '2': 2,
-    '3': 3,
-    '4': 4,
-    '5': 5,
-    '6': 6,
-    '7': 7,
-    '8': 8,
-    '9': 9,
-    'A': 10,
-    'B': 11,
-    'C': 12,
-    'D': 13,
-    'E': 14,
-    'F': 15
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "A": 10,
+    "B": 11,
+    "C": 12,
+    "D": 13,
+    "E": 14,
+    "F": 15,
 }
 
 
@@ -66,12 +67,28 @@ def hexadecimal_to_decimal(string: str):
     return amount
 
 
+def decimal_to_binary(string: str) -> str:
+    amount = int(string)
+    max_power = find_largest_power_of_base_in_number(amount, 2)
+    length = max_power + 1
+    result = ["0"] * length
+
+    while amount > 0:
+        power = find_largest_power_of_base_in_number(amount, 2)
+        multiple_of_power = 2**power
+        result[length - power - 1] = str(amount // multiple_of_power)
+        amount = amount - multiple_of_power
+
+    return "".join(result)
+
+
 if __name__ == "__main__":
     # print(binary_to_decimal("11010"))
     # print(find_largest_power_of_base_in_number(26, 2))
     # print(find_largest_power_of_base_in_number(241791, 16))
     # print(binary_to_decimal("11010"))
     # print(binary_to_decimal("10"))
-    print(hexadecimal_to_decimal("A"))
+    # print(hexadecimal_to_decimal("A"))
+    print(decimal_to_binary("26"))
     # print(45183// 4096)
     # print(241791 // 65536)

@@ -33,8 +33,37 @@ def binary_to_decimal(string):
         amount = amount + ((2**i) * int(string[index]))
     return amount
 
-def hexadecimal_to_decimal(string):
-    return 0
+hex_to_decimal_map = {
+    '0': 0,
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
+    'A': 10,
+    'B': 11,
+    'C': 12,
+    'D': 13,
+    'E': 14,
+    'F': 15
+}
+
+
+def hexadecimal_to_decimal(string: str):
+    amount = 0
+    for i in range(len(string)):
+        index = len(string) - 1 - i
+        val = string[index]
+        if val.isdigit():
+            amount = amount + ((16**i) * int(val))
+        else:
+            amount = amount + ((16**i) * hex_to_decimal_map[val.capitalize()])
+
+    return amount
 
 
 if __name__ == "__main__":
@@ -42,6 +71,7 @@ if __name__ == "__main__":
     # print(find_largest_power_of_base_in_number(26, 2))
     # print(find_largest_power_of_base_in_number(241791, 16))
     # print(binary_to_decimal("11010"))
-    print(binary_to_decimal("10"))
+    # print(binary_to_decimal("10"))
+    print(hexadecimal_to_decimal("A"))
     # print(45183// 4096)
     # print(241791 // 65536)

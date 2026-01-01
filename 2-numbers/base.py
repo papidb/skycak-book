@@ -53,6 +53,25 @@ hex_to_decimal_map = {
     "F": 15,
 }
 
+decimal_to_hex_map = {
+    0: "0",
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    10: "A",
+    11: "B",
+    12: "C",
+    13: "D",
+    14: "E",
+    15: "F",
+}
+
 
 def hexadecimal_to_decimal(string: str):
     amount = 0
@@ -82,6 +101,21 @@ def decimal_to_binary(string: str) -> str:
     return "".join(result)
 
 
+def decimal_to_hexadecimal(string: str) -> str:
+    amount = int(string)
+    max_power = find_largest_power_of_base_in_number(amount, 16)
+    length = max_power + 1
+    result = ["0"] * length
+
+    while amount > 0:
+        power = find_largest_power_of_base_in_number(amount, 16)
+        multiple_of_power = 16**power
+        difference = amount // multiple_of_power
+        result[length - power - 1] = decimal_to_hex_map[difference]
+        amount -= difference * multiple_of_power
+    return "".join(result)
+
+
 if __name__ == "__main__":
     # print(binary_to_decimal("11010"))
     # print(find_largest_power_of_base_in_number(26, 2))
@@ -89,6 +123,7 @@ if __name__ == "__main__":
     # print(binary_to_decimal("11010"))
     # print(binary_to_decimal("10"))
     # print(hexadecimal_to_decimal("A"))
-    print(decimal_to_binary("26"))
+    # print(decimal_to_binary("26"))
+    print(decimal_to_hexadecimal("241791"))
     # print(45183// 4096)
     # print(241791 // 65536)

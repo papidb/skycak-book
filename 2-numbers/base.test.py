@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary
+from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal
 
 tests = [
     # binary_to_decimal tests
@@ -244,6 +244,78 @@ tests = [
         'function': decimal_to_binary,
         'input': 256,
         'output': '100000000'
+    },
+
+    # decimal_to_hexadecimal tests
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 0,
+        'output': '0'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 1,
+        'output': '1'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 9,
+        'output': '9'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 10,
+        'output': 'A'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 15,
+        'output': 'F'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 16,
+        'output': '10'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 26,
+        'output': '1A'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 255,
+        'output': 'FF'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 256,
+        'output': '100'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 2748,
+        'output': 'ABC'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 4096,
+        'output': '1000'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 51966,
+        'output': 'CAFE'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 57005,
+        'output': 'DEAD'
+    },
+    {
+        'function': decimal_to_hexadecimal,
+        'input': 48879,
+        'output': 'BEEF'
     },
 ]
 

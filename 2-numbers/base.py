@@ -120,6 +120,10 @@ def binary_to_hexadecimal(string):
     return decimal_to_hexadecimal(binary_to_decimal(string))
 
 
+def hexadecimal_to_binary(string):
+    return decimal_to_binary(hexadecimal_to_decimal(string))
+
+
 def optimized_decimal_to_hexadecimal(s: str) -> str:
     n = int(s)
 

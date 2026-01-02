@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal, binary_to_hexadecimal
+from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal, binary_to_hexadecimal, hexadecimal_to_binary
 
 tests = [
     # binary_to_decimal tests
@@ -388,6 +388,103 @@ tests = [
         'function': binary_to_hexadecimal,
         'input': '1011111011101111',
         'output': 'BEEF'
+    },
+
+    # hexadecimal_to_binary tests
+    {
+        'function': hexadecimal_to_binary,
+        'input': '0',
+        'output': '0'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '1',
+        'output': '1'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '9',
+        'output': '1001'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'A',
+        'output': '1010'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'a',
+        'output': '1010'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'F',
+        'output': '1111'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'f',
+        'output': '1111'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '10',
+        'output': '10000'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '1A',
+        'output': '11010'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '1a',
+        'output': '11010'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'FF',
+        'output': '11111111'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'ff',
+        'output': '11111111'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '100',
+        'output': '100000000'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'ABC',
+        'output': '101010111100'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'abc',
+        'output': '101010111100'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': '1000',
+        'output': '1000000000000'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'CAFE',
+        'output': '1100101011111110'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'DEAD',
+        'output': '1101111010101101'
+    },
+    {
+        'function': hexadecimal_to_binary,
+        'input': 'BEEF',
+        'output': '1011111011101111'
     },
 ]
 

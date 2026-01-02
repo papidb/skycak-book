@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal
+from base import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal, binary_to_hexadecimal
 
 tests = [
     # binary_to_decimal tests
@@ -315,6 +315,78 @@ tests = [
     {
         'function': decimal_to_hexadecimal,
         'input': 48879,
+        'output': 'BEEF'
+    },
+
+    # binary_to_hexadecimal tests
+    {
+        'function': binary_to_hexadecimal,
+        'input': '0',
+        'output': '0'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1',
+        'output': '1'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1001',
+        'output': '9'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1010',
+        'output': 'A'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1111',
+        'output': 'F'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '10000',
+        'output': '10'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '11010',
+        'output': '1A'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '11111111',
+        'output': 'FF'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '100000000',
+        'output': '100'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '101010111100',
+        'output': 'ABC'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1000000000000',
+        'output': '1000'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1100101011111110',
+        'output': 'CAFE'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1101111010101101',
+        'output': 'DEAD'
+    },
+    {
+        'function': binary_to_hexadecimal,
+        'input': '1011111011101111',
         'output': 'BEEF'
     },
 ]

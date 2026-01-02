@@ -116,6 +116,24 @@ def decimal_to_hexadecimal(string: str) -> str:
     return "".join(result)
 
 
+def optimized_decimal_to_hexadecimal(s: str) -> str:
+    n = int(s)
+
+    if n < 0:
+        raise ValueError("Negative numbers are not supported")
+
+    if n == 0:
+        return "0"
+
+    out = []
+    while n > 0:
+        n, r = divmod(n, 2)
+        print(n, r)
+        out.append(decimal_to_hex_map[r])
+
+    return "".join(reversed(out))
+
+
 if __name__ == "__main__":
     # print(binary_to_decimal("11010"))
     # print(find_largest_power_of_base_in_number(26, 2))

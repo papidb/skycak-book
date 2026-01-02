@@ -116,8 +116,8 @@ def decimal_to_hexadecimal(string: str) -> str:
     return "".join(result)
 
 
-def binary_to_hexadecimal(string): 
-    return ""
+def binary_to_hexadecimal(string):
+    return decimal_to_hexadecimal(binary_to_decimal(string))
 
 
 def optimized_decimal_to_hexadecimal(s: str) -> str:

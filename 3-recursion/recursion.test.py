@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from recursion import generate_sequence_1, get_nth_term_sequence_1, generate_collatz_sequence, get_nth_term_collatz, generate_fibonacci_sequence, get_nth_term_fibonacci
+from recursion import generate_sequence_1, get_nth_term_sequence_1, generate_collatz_sequence, get_nth_term_collatz, generate_fibonacci_sequence, get_nth_term_fibonacci, generate_product_sequence, get_nth_term_product
 
 tests = [
     # generate_sequence_1 tests
@@ -315,6 +315,85 @@ tests = [
         'function': get_nth_term_fibonacci,
         'input': 13,
         'output': 144
+    },
+
+    # generate_product_sequence tests
+    {
+        'function': generate_product_sequence,
+        'input': 1,
+        'output': [2]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 2,
+        'output': [2, -3]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 3,
+        'output': [2, -3, -6]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 4,
+        'output': [2, -3, -6, 18]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 5,
+        'output': [2, -3, -6, 18, -108]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 6,
+        'output': [2, -3, -6, 18, -108, -1944]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 7,
+        'output': [2, -3, -6, 18, -108, -1944, 209952]
+    },
+    {
+        'function': generate_product_sequence,
+        'input': 0,
+        'output': []
+    },
+
+    # get_nth_term_product tests
+    {
+        'function': get_nth_term_product,
+        'input': 1,
+        'output': 2
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 2,
+        'output': -3
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 3,
+        'output': -6
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 4,
+        'output': 18
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 5,
+        'output': -108
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 6,
+        'output': -1944
+    },
+    {
+        'function': get_nth_term_product,
+        'input': 7,
+        'output': 209952
     },
 ]
 

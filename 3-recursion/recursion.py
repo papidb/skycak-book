@@ -67,3 +67,29 @@ def get_nth_term_fibonacci(n: int) -> int:
         return 1
 
     return get_nth_term_fibonacci(n - 2) + get_nth_term_fibonacci(n - 1)
+
+
+def generate_product_sequence(n: int) -> list:
+    """
+    Generate an array containing the first n terms of the product sequence.
+    Starting with 2, -3, each term is the product of the previous two terms.
+    """
+    result = []
+
+    for i in range(n):
+        result.append(get_nth_term_product(i + 1))
+
+    return result
+
+
+def get_nth_term_product(n: int) -> int:
+    """
+    Recursively generate the nth term of the product sequence.
+    Starting with 2, -3, each term is the product of the previous two terms.
+    """
+    if n == 1:
+        return 2
+    if n == 2:
+        return -3
+
+    return get_nth_term_product(n - 2) * get_nth_term_product(n - 1)

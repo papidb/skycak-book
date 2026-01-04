@@ -41,3 +41,29 @@ def get_nth_term_collatz(n: int) -> int:
     if previous % 2 == 0:
         return previous / 2
     return (previous * 3) + 1
+
+
+def generate_fibonacci_sequence(n: int) -> list:
+    """
+    Generate an array containing the first n terms of the Fibonacci sequence.
+    Starting with 0, 1, each term is the sum of the previous two terms.
+    """
+    result = []
+
+    for i in range(n):
+        result.append(get_nth_term_fibonacci(i + 1))
+
+    return result
+
+
+def get_nth_term_fibonacci(n: int) -> int:
+    """
+    Recursively generate the nth term of the Fibonacci sequence.
+    Starting with 0, 1, each term is the sum of the previous two terms.
+    """
+    if n == 1:
+        return 0
+    if n == 2:
+        return 1
+
+    return get_nth_term_fibonacci(n - 2) + get_nth_term_fibonacci(n - 1)

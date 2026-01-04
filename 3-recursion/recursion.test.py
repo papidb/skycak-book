@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from test_utils import run_tests
 
-from recursion import generate_sequence_1, get_nth_term_sequence_1, generate_collatz_sequence, get_nth_term_collatz
+from recursion import generate_sequence_1, get_nth_term_sequence_1, generate_collatz_sequence, get_nth_term_collatz, generate_fibonacci_sequence, get_nth_term_fibonacci
 
 tests = [
     # generate_sequence_1 tests
@@ -201,6 +201,120 @@ tests = [
         'function': get_nth_term_collatz,
         'input': 12,
         'output': 17
+    },
+
+    # generate_fibonacci_sequence tests
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 1,
+        'output': [0]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 2,
+        'output': [0, 1]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 3,
+        'output': [0, 1, 1]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 4,
+        'output': [0, 1, 1, 2]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 5,
+        'output': [0, 1, 1, 2, 3]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 6,
+        'output': [0, 1, 1, 2, 3, 5]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 7,
+        'output': [0, 1, 1, 2, 3, 5, 8]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 10,
+        'output': [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+    },
+    {
+        'function': generate_fibonacci_sequence,
+        'input': 0,
+        'output': []
+    },
+
+    # get_nth_term_fibonacci tests
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 1,
+        'output': 0
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 2,
+        'output': 1
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 3,
+        'output': 1
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 4,
+        'output': 2
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 5,
+        'output': 3
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 6,
+        'output': 5
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 7,
+        'output': 8
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 8,
+        'output': 13
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 9,
+        'output': 21
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 10,
+        'output': 34
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 11,
+        'output': 55
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 12,
+        'output': 89
+    },
+    {
+        'function': get_nth_term_fibonacci,
+        'input': 13,
+        'output': 144
     },
 ]
 
